@@ -257,8 +257,8 @@ body { font-family: var(--sans); background: var(--cream); color: var(--text); o
    COUNTDOWN — RING CLOCK
    ============================== */
 #countdown {
-  background:linear-gradient(135deg,var(--dark) 0%,var(--dark-warm) 100%);
-  padding:5rem 2rem; text-align:center; position:relative; overflow:hidden;
+  background:var(--ref-cream);
+  padding:2.5rem 2rem 4.5rem; text-align:center; position:relative; overflow:hidden;
 }
 #countdown::before {
   content:''; position:absolute; inset:0; pointer-events:none;
@@ -1058,7 +1058,6 @@ body.env-open { overflow:hidden; }
 <!-- NAV DOTS -->
 <nav id="nav-dots">
   <button class="nav-dot active" onclick="goTo('hero')"></button>
-  <button class="nav-dot" onclick="goTo('countdown')"></button>
   <button class="nav-dot" onclick="goTo('padres')"></button>
   <button class="nav-dot" onclick="goTo('padrinos')"></button>
   <button class="nav-dot" onclick="goTo('story')"></button>
@@ -1121,81 +1120,6 @@ body.env-open { overflow:hidden; }
 
 <div class="section-seam"><img src="adornos/divider.webp" alt=""></div>
 
-<!-- ======================== COUNTDOWN ======================== -->
-<section id="countdown">
-  <img class="leaf-deco leaf-corner" src="adornos/ramo.webp" alt="" style="top:-2rem;left:-1.8rem;width:clamp(110px,16vw,180px);transform:rotate(-12deg)">
-  <img class="leaf-deco leaf-corner" src="adornos/ramo.webp" alt="" style="bottom:-2rem;right:-1.8rem;width:clamp(110px,16vw,180px);transform:rotate(168deg)">
-  <span class="cd-label reveal">Faltan para nuestra boda</span>
-
-  <div class="clock-rings">
-    <!-- DÍAS -->
-    <div class="ring-wrap">
-      <div class="ring-box">
-        <svg class="ring-svg" viewBox="0 0 100 100">
-          <circle class="ring-bg"    cx="50" cy="50" r="44"/>
-          <circle class="ring-track" cx="50" cy="50" r="44"/>
-          <circle class="ring-arc"   cx="50" cy="50" r="44" id="arc-days"/>
-        </svg>
-        <div class="ring-inner">
-          <span class="ring-num" id="cd-days">--</span>
-        </div>
-      </div>
-      <span class="ring-unit">Días</span>
-    </div>
-
-    <div class="cd-sep">:</div>
-
-    <!-- HORAS -->
-    <div class="ring-wrap">
-      <div class="ring-box">
-        <svg class="ring-svg" viewBox="0 0 100 100">
-          <circle class="ring-bg"    cx="50" cy="50" r="44"/>
-          <circle class="ring-track" cx="50" cy="50" r="44"/>
-          <circle class="ring-arc"   cx="50" cy="50" r="44" id="arc-hours"/>
-        </svg>
-        <div class="ring-inner">
-          <span class="ring-num" id="cd-hours">--</span>
-        </div>
-      </div>
-      <span class="ring-unit">Horas</span>
-    </div>
-
-    <div class="cd-sep">:</div>
-
-    <!-- MINUTOS -->
-    <div class="ring-wrap">
-      <div class="ring-box">
-        <svg class="ring-svg" viewBox="0 0 100 100">
-          <circle class="ring-bg"    cx="50" cy="50" r="44"/>
-          <circle class="ring-track" cx="50" cy="50" r="44"/>
-          <circle class="ring-arc"   cx="50" cy="50" r="44" id="arc-mins"/>
-        </svg>
-        <div class="ring-inner">
-          <span class="ring-num" id="cd-mins">--</span>
-        </div>
-      </div>
-      <span class="ring-unit">Minutos</span>
-    </div>
-
-    <div class="cd-sep">:</div>
-
-    <!-- SEGUNDOS -->
-    <div class="ring-wrap">
-      <div class="ring-box">
-        <svg class="ring-svg" viewBox="0 0 100 100">
-          <circle class="ring-bg"    cx="50" cy="50" r="44"/>
-          <circle class="ring-track" cx="50" cy="50" r="44"/>
-          <circle class="ring-arc"   cx="50" cy="50" r="44" id="arc-secs"/>
-        </svg>
-        <div class="ring-inner">
-          <span class="ring-num" id="cd-secs">--</span>
-        </div>
-      </div>
-      <span class="ring-unit">Segundos</span>
-    </div>
-  </div>
-</section>
-
 <!-- ======================== PADRES ======================== -->
 <section id="padres">
   <div class="container">
@@ -1247,6 +1171,79 @@ body.env-open { overflow:hidden; }
       <span class="ref-date-num">27</span>
       <span class="ref-date-word">Noviembre</span>
     </p>
+  </div>
+
+  <!-- Cuenta regresiva (después de la fecha, como en la referencia) -->
+  <div id="countdown">
+    <span class="cd-label reveal">Faltan para nuestra boda</span>
+
+    <div class="clock-rings">
+      <!-- DÍAS -->
+      <div class="ring-wrap">
+        <div class="ring-box">
+          <svg class="ring-svg" viewBox="0 0 100 100">
+            <circle class="ring-bg"    cx="50" cy="50" r="44"/>
+            <circle class="ring-track" cx="50" cy="50" r="44"/>
+            <circle class="ring-arc"   cx="50" cy="50" r="44" id="arc-days"/>
+          </svg>
+          <div class="ring-inner">
+            <span class="ring-num" id="cd-days">--</span>
+          </div>
+        </div>
+        <span class="ring-unit">Días</span>
+      </div>
+
+      <div class="cd-sep">:</div>
+
+      <!-- HORAS -->
+      <div class="ring-wrap">
+        <div class="ring-box">
+          <svg class="ring-svg" viewBox="0 0 100 100">
+            <circle class="ring-bg"    cx="50" cy="50" r="44"/>
+            <circle class="ring-track" cx="50" cy="50" r="44"/>
+            <circle class="ring-arc"   cx="50" cy="50" r="44" id="arc-hours"/>
+          </svg>
+          <div class="ring-inner">
+            <span class="ring-num" id="cd-hours">--</span>
+          </div>
+        </div>
+        <span class="ring-unit">Horas</span>
+      </div>
+
+      <div class="cd-sep">:</div>
+
+      <!-- MINUTOS -->
+      <div class="ring-wrap">
+        <div class="ring-box">
+          <svg class="ring-svg" viewBox="0 0 100 100">
+            <circle class="ring-bg"    cx="50" cy="50" r="44"/>
+            <circle class="ring-track" cx="50" cy="50" r="44"/>
+            <circle class="ring-arc"   cx="50" cy="50" r="44" id="arc-mins"/>
+          </svg>
+          <div class="ring-inner">
+            <span class="ring-num" id="cd-mins">--</span>
+          </div>
+        </div>
+        <span class="ring-unit">Minutos</span>
+      </div>
+
+      <div class="cd-sep">:</div>
+
+      <!-- SEGUNDOS -->
+      <div class="ring-wrap">
+        <div class="ring-box">
+          <svg class="ring-svg" viewBox="0 0 100 100">
+            <circle class="ring-bg"    cx="50" cy="50" r="44"/>
+            <circle class="ring-track" cx="50" cy="50" r="44"/>
+            <circle class="ring-arc"   cx="50" cy="50" r="44" id="arc-secs"/>
+          </svg>
+          <div class="ring-inner">
+            <span class="ring-num" id="cd-secs">--</span>
+          </div>
+        </div>
+        <span class="ring-unit">Segundos</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1591,7 +1588,7 @@ const revObs = new IntersectionObserver(entries => {
 revEls.forEach(el => revObs.observe(el));
 
 /* ---- NAV DOTS ---- */
-const SECS = ['hero','countdown','padres','padrinos','story','details','dresscode','rsvp','contact'];
+const SECS = ['hero','padres','padrinos','story','details','dresscode','rsvp','contact'];
 const dots = document.querySelectorAll('.nav-dot');
 function goTo(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
 const secObs = new IntersectionObserver(entries => {
