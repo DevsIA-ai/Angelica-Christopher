@@ -327,9 +327,19 @@ body { font-family: var(--sans); background: var(--cream); color: var(--text); o
 #countdown .leaf-deco { display:none; }
 
 /* Monograma superior (logo.webp) */
+@keyframes monogram-float {
+  0%   { transform:translateY(0)      rotate(-0.35deg); }
+  50%  { transform:translateY(-5px)   rotate(0.35deg); }
+  100% { transform:translateY(0)      rotate(-0.35deg); }
+}
 .ref-monogram {
   display:block; width:clamp(150px,44vw,245px); height:auto;
   margin:0 auto 3rem;
+  animation:monogram-float 6s ease-in-out infinite;
+  will-change:transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ref-monogram { animation:none; }
 }
 
 /* Encabezado en mayúsculas (serif) */
@@ -766,6 +776,9 @@ footer {
 .footer-orn { display:flex; align-items:center; justify-content:center; }
 .footer-divider { width:min(70%,300px); height:auto; opacity:.55; }
 
+/* Fondo crema unificado (mismo que "Con la bendición de Dios") */
+#dresscode, #rsvp, #contact, footer { background:var(--ref-cream); }
+
 /* ==============================
    SOBRE / ENVELOPE OVERLAY
    ============================== */
@@ -1123,7 +1136,7 @@ body.env-open { overflow:hidden; }
 <!-- ======================== PADRES ======================== -->
 <section id="padres">
   <div class="container">
-    <img class="ref-monogram reveal" src="logo.webp" alt="Iniciales de Angélica y Christopher">
+    <img class="ref-monogram" src="logo.webp" alt="Iniciales de Angélica y Christopher">
     <h2 class="ref-heading reveal">Con la bendición de Dios<br>y nuestros padres</h2>
 
     <div class="detail-cards">
