@@ -25,8 +25,8 @@
   --dark:       #c1b6a4;   /* neutral (#C1B6A4) — fondos de sección */
   --dark-mid:   #ccc3b4;
   --dark-warm:  #b3a793;
-  --on-gold:    #322a1f;   /* texto sobre fondo taupe */
-  --on-gold-mut:#544735;   /* texto secundario sobre taupe */
+  --on-gold:    #3a352c;   /* texto sobre fondo neutral */
+  --on-gold-mut:#6a6152;   /* texto secundario sobre neutral */
   --text:       #3a2820;
   --text-muted: #8a7a6a;
   --white:      #ffffff;
@@ -36,12 +36,12 @@
   --sans:       'Montserrat', sans-serif;
 
   /* ---- Paleta "referencia" (secciones de nombres) ---- */
-  --ref-cream:  #c1b6a4;   /* fondo taupe (#C1B6A4) */
-  --ref-ink:    #33261a;   /* nombres de los novios (oscuro) */
-  --ref-brown:  #40311f;   /* encabezados en mayúsculas */
-  --ref-script: #453522;   /* rótulos en script */
-  --ref-tan:    #5f4d38;   /* nombres de personas / frase / fecha */
-  --ref-mid:    #4d3c28;   /* "27" y acentos */
+  --ref-cream:  #f8f2e4;   /* fondo crema cálido */
+  --ref-ink:    #46372a;   /* nombres de los novios (oscuro) */
+  --ref-brown:  #5b4a39;   /* encabezados en mayúsculas */
+  --ref-script: #6b5847;   /* rótulos en script */
+  --ref-tan:    #a98d70;   /* nombres de personas / frase / fecha */
+  --ref-mid:    #8a6f56;   /* "27" y acentos */
 }
 
 html { scroll-behavior: smooth; }
@@ -51,7 +51,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--text); o
 .eyebrow {
   font-family: var(--sans);
   font-size: 0.6rem; letter-spacing: 0.5em;
-  text-transform: uppercase; color: var(--ref-mid);
+  text-transform: uppercase; color: var(--gold);
   display: block; margin-bottom: 0.75rem;
 }
 .section-title {
@@ -59,7 +59,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--text); o
   font-size: clamp(2.2rem,5vw,3.5rem);
   font-weight: 300; line-height: 1.15; color: var(--text);
 }
-.section-title em { font-style: italic; color: var(--ref-mid); }
+.section-title em { font-style: italic; color: var(--gold-dark); }
 .container { max-width: 900px; margin: 0 auto; padding: 5rem 2.5rem; }
 .container--wide { max-width: 1100px; margin: 0 auto; padding: 5rem 2.5rem; }
 .divider-line { width: 60px; height: 1px; background: linear-gradient(90deg,transparent,var(--gold),transparent); margin: 1.25rem auto; position:relative; }
@@ -776,12 +776,8 @@ footer {
 .footer-orn { display:flex; align-items:center; justify-content:center; }
 .footer-divider { width:min(70%,300px); height:auto; opacity:.55; }
 
-/* Fondo unificado en todo el sitio (excepto el hero) */
+/* Fondo crema unificado en todo el sitio (excepto el hero) */
 #details, #dresscode, #gifts, #rsvp, #contact, footer { background:var(--ref-cream); }
-
-/* Legibilidad de textos secundarios sobre el fondo taupe */
-.dc-caption, .contact-lbl, .dress-badge { color:var(--ref-mid); }
-.swatch-name, .dresscode-note, .rsvp-deadline, .contact-info { color:var(--ref-tan); }
 
 /* ==============================
    SOBRE / ENVELOPE OVERLAY
