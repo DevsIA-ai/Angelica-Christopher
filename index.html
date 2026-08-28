@@ -776,15 +776,15 @@ footer {
 .footer-orn { display:flex; align-items:center; justify-content:center; }
 .footer-divider { width:min(70%,300px); height:auto; opacity:.55; }
 
-/* Fondo crema unificado (mismo que "Con la bendición de Dios") */
-#dresscode, #rsvp, #contact, footer { background:var(--ref-cream); }
+/* Fondo crema unificado en todo el sitio (excepto el hero) */
+#details, #dresscode, #gifts, #rsvp, #contact, footer { background:var(--ref-cream); }
 
 /* ==============================
    SOBRE / ENVELOPE OVERLAY
    ============================== */
 #env-overlay {
   position:fixed; inset:0; z-index:9999;
-  background:linear-gradient(155deg,#f7f1e4 0%,#efe4cf 55%,#e6d7bb 100%);
+  background:var(--ref-cream);
   display:flex; align-items:center; justify-content:center;
   transition:opacity .7s ease;
 }
